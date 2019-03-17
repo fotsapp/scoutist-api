@@ -1,4 +1,4 @@
-# Fm Scout API
+# Scoutist API
 Written in Golang for fmscout app's backend.
 
 
@@ -59,7 +59,7 @@ potential | Returns the potential value of the player.
 
 - Nations : **http://localhost:8080/teams
 - Leagues : **http://localhost:8080/leagues
-- Teams : **http://localhost:8080/teams
+- Teams   : **http://localhost:8080/teams
 - Players : **http://localhost:8080/players 
 
 # Output
@@ -174,6 +174,9 @@ potential | Returns the potential value of the player.
 *http://localhost:8080/teams*
 
 *http://localhost:8080/players*
+
+
+> Domains will change.
 
 
 
