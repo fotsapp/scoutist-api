@@ -20,10 +20,10 @@ type nations struct{
 
 type leagues struct{
 	/* id, nationID, leagueName, league_image, league_link */
-	ID string `json:"id"`
-	NationID string `json:"nationID"`
-	LeagueName string `json:"leagueName"`
-	LeagueImage string `json:"league_image"`
+	ID string 
+	NationID string
+	LeagueName string 
+	LeagueImage string
 }
 
 type teams struct{
@@ -35,17 +35,17 @@ type teams struct{
 
 type players struct{
 	/* id, teamID, name, image, age, position, value, exprValue, exprDate, rating, potential*/
-	ID string `json:"id,omitempty"`
-	TeamID string `json:"teamID,omitempty"`
+	ID string 
+	TeamID string 
 	Name string
-	Image string `json:"image,omitempty"`
-	Age string `json:"age,omitempty"`
-	Position string `json:"position,omitempty"`
-	Value string `json:"value,omitempty"`
-	ExprValue string `json:"expr_value,omitempty"`
-	ExprDate string `json:"exprDate,omitempty"`
-	Rating string `json:"rating,omitempty"`
-	Potential string `json:"potential,omitempty"`
+	Image string 
+	Age string
+	Position string 
+	Value string
+	ExprValue string
+	ExprDate string 
+	Rating string 
+	Potential string 
 }
 
 type listTeam struct {
@@ -55,11 +55,11 @@ type listTeam struct {
 var db *sql.DB
 
 const (
-	db_host		= "localhost"
+	db_host	    = "localhost"
 	db_user     = "postgres"
-	db_password = "Omur1994"
-	db_name     = "fmscout"
-	db_port		= "5432"
+	db_password = "~"
+	db_name     = "~"
+	db_port	    = "~"
 )
 
 var nationList []nations
