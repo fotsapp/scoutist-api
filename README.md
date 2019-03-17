@@ -167,13 +167,11 @@ potential | Returns the potential value of the player.
 *go run scoutist.go*
 
 3. Execute query.
-*http://localhost:8080/nations*
 
-*http://localhost:8080/leagues*
-
-*http://localhost:8080/teams*
-
-*http://localhost:8080/players*
+-http://localhost:8080/nations
+-http://localhost:8080/leagues
+-http://localhost:8080/teams
+-http://localhost:8080/players
 
 
 > Domains will change.
