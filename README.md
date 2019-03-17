@@ -12,7 +12,7 @@ Written in Golang for fmscout app's backend.
 
 ## Items
 
-- Nation
+## Nation
 
 Field | Description
 ------|------------
@@ -20,7 +20,7 @@ Field | Description
 name | Nation name get value.
 image | The URL of the nation image.
 
-- League
+## League
 
 Field | Description
 ------|------------
@@ -29,7 +29,7 @@ nation_id | Get nation id value.
 league_name | The name of the league name.
 league_image | The URL of the league image.
 
-- Teams
+## Teams
 
 Field | Description
 ------|------------
@@ -38,7 +38,7 @@ league_id | Get league id value.
 team_name | The name of the team name.
 team_image | The URL of the team image.
 
-- Players
+## Players
 
 Field | Description
 ------|------------
