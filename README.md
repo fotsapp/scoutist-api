@@ -57,10 +57,10 @@ potential | Returns the potential value of the player.
 
 # Execute Links
 
-- Nations : **http://localhost:8080/teams
-- Leagues : **http://localhost:8080/leagues
-- Teams   : **http://localhost:8080/teams
-- Players : **http://localhost:8080/players 
+- Nations : http://localhost:8080/teams
+- Leagues : http://localhost:8080/leagues
+- Teams   : http://localhost:8080/teams
+- Players : http://localhost:8080/players 
 
 # Output
 
