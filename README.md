@@ -160,11 +160,11 @@ potential | Returns the potential value of the player.
 
 1. Git clone this project.
 
-*git clone git@github.com:fevziomurtekin/fmscout-backend.git*
+*git@github.com:scoutist/scoutist-api.git*
 
 2. Run project.
 
-*go run fmscoutapi.go*
+*go run scoutist.go*
 
 3. Execute query.
 *http://localhost:8080/nations*
@@ -184,4 +184,4 @@ potential | Returns the potential value of the player.
 
 
 
-The Apache License 2.0 - see [`LICENSE`](LICENSE) for more details
+The MIT License 2.0 - see [`LICENSE`](LICENSE) for more details
