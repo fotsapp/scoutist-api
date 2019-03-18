@@ -48,10 +48,6 @@ type players struct{
 	Potential string 
 }
 
-type listTeam struct {
-   	teamList []teams `json:"teamList"`
-}
-
 var db *sql.DB
 
 const (
@@ -64,7 +60,7 @@ const (
 
 var nationList []nations
 var leagueList []leagues
-var teamList 	[]teams
+var teamList   []teams
 var playerList []players
 
 
@@ -125,7 +121,6 @@ func GetNations(w http.ResponseWriter, req *http.Request) {
 	err  := queryNations(id,name)
 
 	if err != nil {
-		fmt.Print("err boş değil.")
 		http.Error(w, err.Error(), 500)
 		return
 	}
@@ -304,7 +299,6 @@ func GetPlayers(w http.ResponseWriter, req *http.Request) {
     err := queryPlayers(id,teamID,name,age,position,value,exprValue,exprDate,rating,potential)
 
 	if err != nil {
-		fmt.Print("err boş değil.")
 		http.Error(w, err.Error(), 500)
 		return
 	}
