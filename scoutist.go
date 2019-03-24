@@ -13,7 +13,7 @@ import (
 
 type banners struct{
 	/* category_id ,category_name , banner_link*/
-	CategoryID string
+	BannerID string
 	CategoryName string
 	BannerLink string
 }
@@ -140,7 +140,7 @@ func GetBanner(w http.ResponseWriter, req *http.Request) {
 
 func queryBanner() error{
 	
-	query 	  	:= "select category.category_id,category.category_name,banner.banner_link from category inner join banner on (category.category_id=banner.category_id)"
+	query 	  	:= "select banner.banner_id,category.category_name,banner.banner_link from category inner join banner on (category.category_id=banner.category_id)"
 
 	rows, err 	:= db.Query(query)
 
@@ -149,7 +149,7 @@ func queryBanner() error{
 	bannerList=nil
 	for rows.Next() {
 		banner		 := banners{}
-		err 		 = rows.Scan(&banner.CategoryID,&banner.CategoryName,&banner.BannerLink)
+		err 		 = rows.Scan(&banner.BannerID,&banner.CategoryName,&banner.BannerLink)
 	
 		bannerList  = append(bannerList,banner)
 	}
