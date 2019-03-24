@@ -61,9 +61,9 @@ var db *sql.DB
 const (
 	db_host		= "localhost"
 	db_user     = "postgres"
-	db_password = "Omur1994"
-	db_name     = "fmscout"
-	db_port		= "5432"
+	db_password = "~"
+	db_name     = "~"
+	db_port		= "~"
 )
 
 var nationList []nations

@@ -1,4 +1,4 @@
-# Fm Scout API
+# Scoutist API
 Written in Golang for fmscout app's backend.
 
 
@@ -12,7 +12,7 @@ Written in Golang for fmscout app's backend.
 
 ## Items
 
-- Nation
+### Nation
 
 Field | Description
 ------|------------
@@ -20,7 +20,7 @@ Field | Description
 name | Nation name get value.
 image | The URL of the nation image.
 
-- League
+### League
 
 Field | Description
 ------|------------
@@ -29,7 +29,7 @@ nation_id | Get nation id value.
 league_name | The name of the league name.
 league_image | The URL of the league image.
 
-- Teams
+### Teams
 
 Field | Description
 ------|------------
@@ -38,7 +38,7 @@ league_id | Get league id value.
 team_name | The name of the team name.
 team_image | The URL of the team image.
 
-- Players
+### Players
 
 Field | Description
 ------|------------
@@ -57,10 +57,10 @@ potential | Returns the potential value of the player.
 
 # Execute Links
 
-- Nations : **http://localhost:8080/teams
-- Leagues : **http://localhost:8080/leagues
-- Teams : **http://localhost:8080/teams
-- Players : **http://localhost:8080/players 
+- Nations : http://localhost:8080/teams
+- Leagues : http://localhost:8080/leagues
+- Teams   : http://localhost:8080/teams
+- Players : http://localhost:8080/players 
 
 # Output
 
@@ -160,25 +160,26 @@ potential | Returns the potential value of the player.
 
 1. Git clone this project.
 
-*git clone git@github.com:fevziomurtekin/fmscout-backend.git*
+*git@github.com:scoutist/scoutist-api.git*
 
 2. Run project.
 
-*go run fmscoutapi.go*
+*go run scoutist.go*
 
 3. Execute query.
-*http://localhost:8080/nations*
 
-*http://localhost:8080/leagues*
-
-*http://localhost:8080/teams*
-
-*http://localhost:8080/players*
+- http://localhost:8080/nations
+- http://localhost:8080/leagues
+- http://localhost:8080/teams
+- http://localhost:8080/players
 
 
-
+> Domains will change.
 
 
 
 
-The Apache License 2.0 - see [`LICENSE`](LICENSE) for more details
+
+
+
+The MIT License- see [`LICENSE`](LICENSE) for more details
