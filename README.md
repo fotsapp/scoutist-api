@@ -4,6 +4,7 @@ Written in Golang for fmscout app's backend.
 
 # Includes
 
+- Banners
 - Nations
 - League
 - Teams 
@@ -11,6 +12,14 @@ Written in Golang for fmscout app's backend.
 
 
 ## Items
+
+### Banners
+
+Field | Description
+------|------------
+**banner_id** | The item's unique id.
+category_name | Banner name get value.
+banner_link | The URL of the banner image.
 
 ### Nation
 
@@ -63,6 +72,20 @@ potential | Returns the potential value of the player.
 - Players : http://localhost:8080/players 
 
 # Output
+
+- Banner 
+
+```javascript
+[
+    {
+    BannerID: "1",
+    CategoryName: "Goalkeepers of Future",
+    BannerLink: "http://allpicts.in/download/7122/2016/02/Gianluigi_Donnarumma_AC_Milan_best_goalkeepers_3-1600x900.jpg"
+    }
+    ...
+]
+```
+
 
 - Nation 
 
@@ -167,7 +190,7 @@ potential | Returns the potential value of the player.
 *go run scoutist.go*
 
 3. Execute query.
-
+- http://localhost:8080/banners
 - http://localhost:8080/nations
 - http://localhost:8080/leagues
 - http://localhost:8080/teams
