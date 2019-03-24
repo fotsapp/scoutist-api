@@ -11,6 +11,13 @@ import (
 	"strings"
 )
 
+type banners struct{
+	/* category_id ,category_name , banner_link*/
+	CategoryID string
+	CategoryName string
+	BannerLink string
+}
+
 type nations struct{
 	/* id, name, image, link*/
 	ID string 
@@ -20,10 +27,10 @@ type nations struct{
 
 type leagues struct{
 	/* id, nationID, leagueName, league_image, league_link */
-	ID string `json:"id"`
-	NationID string `json:"nationID"`
-	LeagueName string `json:"leagueName"`
-	LeagueImage string `json:"league_image"`
+	ID string
+	NationID string 
+	LeagueName string 
+	LeagueImage string 
 }
 
 type teams struct{
@@ -35,22 +42,19 @@ type teams struct{
 
 type players struct{
 	/* id, teamID, name, image, age, position, value, exprValue, exprDate, rating, potential*/
-	ID string `json:"id,omitempty"`
-	TeamID string `json:"teamID,omitempty"`
+	ID string 
+	TeamID string 
 	Name string
-	Image string `json:"image,omitempty"`
-	Age string `json:"age,omitempty"`
-	Position string `json:"position,omitempty"`
-	Value string `json:"value,omitempty"`
-	ExprValue string `json:"expr_value,omitempty"`
-	ExprDate string `json:"exprDate,omitempty"`
-	Rating string `json:"rating,omitempty"`
-	Potential string `json:"potential,omitempty"`
+	Image string 
+	Age string 
+	Position string 
+	Value string 
+	ExprValue string 
+	ExprDate string 
+	Rating string 
+	Potential string 
 }
 
-type listTeam struct {
-   	teamList []teams `json:"teamList"`
-}
 
 var db *sql.DB
 
@@ -66,6 +70,7 @@ var nationList []nations
 var leagueList []leagues
 var teamList 	[]teams
 var playerList []players
+var bannerList []banners
 
 
 func main(){
@@ -81,10 +86,7 @@ func main(){
 
 	http.HandleFunc("/players",GetPlayers)
 
-    /*router.HandleFunc("/nations/{id}", GetNation).Methods("GET")
-	router.HandleFunc("/leagues/{id}", GetLeague).Methods("GET")
-	router.HandleFunc("/teams/{id}", GetTeam).Methods("GET")
-	router.HandleFunc("/players/{id}", GetPlayer).Methods("GET")*/
+	http.HandleFunc("/banners",GetBanner)
 
 	log.Fatal(http.ListenAndServe("localhost:8080", nil))
 }
@@ -115,6 +117,52 @@ func checkErr(err error) {
 		panic(err)
 	}
 }
+
+
+/* Display all banner datas and query datas.*/
+func GetBanner(w http.ResponseWriter, req *http.Request) {
+
+	err  := queryBanner()
+
+	if err != nil {
+		fmt.Print("err boş değil.")
+		http.Error(w, err.Error(), 500)
+		return
+	}
+
+    out, err := json.Marshal(bannerList)
+	if err != nil {
+		http.Error(w, err.Error(), 500)
+		return
+	}
+	fmt.Fprintf(w, string(out))
+}
+
+func queryBanner() error{
+	
+	query 	  	:= "select category.category_id,category.category_name,banner.banner_link from category inner join banner on (category.category_id=banner.category_id)"
+
+	rows, err 	:= db.Query(query)
+
+	defer rows.Close()
+
+	bannerList=nil
+	for rows.Next() {
+		banner		 := banners{}
+		err 		 = rows.Scan(&banner.CategoryID,&banner.CategoryName,&banner.BannerLink)
+	
+		bannerList  = append(bannerList,banner)
+	}
+	err = rows.Err()
+
+
+	if err != nil {
+		return err
+	}
+	return nil
+
+}
+
 
 /* Display all nations datas and query datas.*/
 func GetNations(w http.ResponseWriter, req *http.Request) {
